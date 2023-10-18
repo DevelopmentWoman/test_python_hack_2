@@ -8,11 +8,10 @@ text: "eq" output => "eq"
 
 
 def fn_hack_1(result):
-    if len(result)==3:
-        result = result[0] + result[1].upper() + result[2]
-    elif len(result)>=4:
-        result= result.replace("oo", "Oo")
-        result = result.replace("i", "I")
-
+    if len(result)>=3:
+        result = result[:1] + result[1].upper() + result[2:]
+    if len(result)>=5:
+        result = result[:4] + result[4].upper() + result[5:]
     return result
+
 
